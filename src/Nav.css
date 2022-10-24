@@ -1,0 +1,84 @@
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    padding: 40px;
+    margin: 0 auto;
+}
+
+.nav__left {
+    display: flex;
+    align-items: center;
+}
+
+.img__wrapper {
+    width: 50px;
+    margin-right: 8px;
+}
+
+.logo {
+    width: 100%;
+}
+
+.logo__text {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.movie__logo--text {
+    color: black;
+}
+
+.purple {
+    color: #7645d9;
+}
+
+.nav__right {
+    font-size: 20px;
+}
+
+.nav__link {
+    color: black;
+    margin: 0 12px;
+}
+
+.nav__link--primary {
+    background-color: #7645d9;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 999px;
+}
+
+/* FIND PAGE NAV STYLING */
+
+.find__logo {
+    display: none;
+}
+
+.find__movie__logo--text {
+    color: white;
+}
+
+.find__logo--text {
+    color: white;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.find__color {
+    color: white;
+}
+
+.find__nav--link {
+    color: white;
+    margin: 0 12px;
+}
+
+.find__nav__link--primary {
+    background-color: white;
+    color: #7645d9;
+    padding: 12px 28px;
+    border-radius: 999px;
+}

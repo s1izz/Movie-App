@@ -1,0 +1,45 @@
+.find {
+
+}
+
+.background__overlay {
+    background-image: linear-gradient(to right, #7645d9, rgba(118, 69, 217, .7)), url(https://www.homeimprovementblog.org/wp-content/uploads/2022/05/fall-movies-index-1628968089-1024x478.jpg);
+    background-size: cover, contain;
+}
+
+.find__sub-title {
+    color: white;
+    text-align: center;
+    margin-bottom: 16px;
+    font-size: 28px;
+}
+
+.find__search--wrapper {
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+}
+
+.find__search--input {
+    width: 100%;
+    border-radius: 50px;
+    font-size: 24px;
+    padding: 12px 24px;
+    border: none;
+    margin-right: 12px;
+    margin-bottom: 43px;
+    
+    border: 1px solid black;
+}
+
+.find__search--btn {
+    background-color: transparent;
+    border: none;
+    color: #7645d9;
+    position: absolute;
+    top: 16px;
+    right: 30px;
+    cursor: pointer;
+}
