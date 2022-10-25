@@ -3,7 +3,7 @@
 }
 
 .background__overlay {
-    background-image: linear-gradient(to right, #7645d9, rgba(118, 69, 217, .7)), url(https://www.homeimprovementblog.org/wp-content/uploads/2022/05/fall-movies-index-1628968089-1024x478.jpg);
+    background-image: linear-gradient(to right,  rgba(83, 20, 208, 0.7), rgba(83, 20, 208, 0.5)), url(https://www.homeimprovementblog.org/wp-content/uploads/2022/05/fall-movies-index-1628968089-1024x478.jpg);
     background-size: cover, contain;
 }
 
@@ -42,4 +42,9 @@
     top: 16px;
     right: 30px;
     cursor: pointer;
+}
+
+.movies__info {
+    max-width: 1200px;
+    margin: 0 auto;
 }

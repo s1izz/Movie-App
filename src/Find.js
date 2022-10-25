@@ -1,9 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Find.css";
 import Nav from "./Nav";
 import SearchIcon from "@mui/icons-material/Search";
+import axios from 'axios'
 
 function Find() {
+  const [searchTerm, setSearchTerm] = useState(null)
+  const [movies, setMovies] = useState([])
+
+  function isSearchTerm() {
+    if (searchTerm === null) {
+      return ("https://www.omdbapi.com/?i=tt3896198&apikey=2a96fd51&s=fast")
+    }
+      return (`https://www.omdbapi.com/?i=tt3896198&apikey=2a96fd51&s=${searchTerm}`)
+  }
+
+  async function getMovies() {
+    const { data } = await axios(isSearchTerm())
+    console.log(data)
+  }
+
+  useEffect(() => {
+    getMovies()
+  }, [])
+  
+  // setSearchTerm('spongebob')
+
   return (
     <div className="find">
       <div className="background__overlay">
@@ -23,7 +45,31 @@ function Find() {
           </button>
         </div>
       </div>
-      
+      <div className="movies__info">
+        <div className="search__info">
+          <h2>Search Results for: </h2>
+        </div>
+        <div className="page__change">
+
+        </div>
+      </div>
+      <div className="movies">
+        
+        <div className="movie">
+          <figure className="movie__img--container">
+            <img src={"poster"} alt="" />
+          </figure>
+          <div className="movie__title">
+            {"title"}
+          </div>
+          <div className="movie__type">
+            {"type"}
+          </div>
+          <div className="movie__year">
+            {"year"}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
