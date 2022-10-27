@@ -25,10 +25,7 @@ function Find() {
     const { data } = await axios.get(
       `https://www.omdbapi.com/?apikey=2a96fd51&s=${searchTerm || homeSearchTerm}`
     );
-    console.log(searchTerm);
-    console.log(homeSearchTerm)
     setMovies(data.Search);
-    console.log(data.Search);
   }
 
   useEffect(() => {
