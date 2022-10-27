@@ -5,7 +5,7 @@ import logo from "./assets/logo.png";
 function Nav({logo__classname, movie__logo__text__classname,logo__text__classname, span__color__classname, nav__link__classname, nav__link__primary__classname}) {
   return (
     <div className="nav">
-      <a href="/">
+      <a href="/Movie-App">
         <div className="nav__left">
           <figure className="img__wrapper">
             <img className={logo__classname} src={logo} alt="" />
@@ -16,8 +16,8 @@ function Nav({logo__classname, movie__logo__text__classname,logo__text__classnam
         </div>
       </a>
       <div className="nav__right">
-        <a href="/" className={nav__link__classname}>Home</a>
-        <a href="/find" className={nav__link__classname}>Find a Movie</a>
+        <a href="/Movie-App" className={nav__link__classname}>Home</a>
+        <a href="/searchPage" className={nav__link__classname}>Find a Movie</a>
         <a href="" className={nav__link__primary__classname}>
           Contact
         </a>

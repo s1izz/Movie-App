@@ -1,6 +1,7 @@
 import "./App.css";
 import Home from "./Home";
 import Find from "./Find";
+import MovieInfo from "./MovieInfo";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -8,9 +9,9 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/find" element={<Find />} />
-          {/* <Route path="/movieInfo" element={<MovieInfo />} /> */}
+          <Route path="/Movie-App" element={<Home />} />
+          <Route path={":homeSearchTerm" || "/searchPage"} element={<Find />} />
+          <Route path=":id" element={<MovieInfo />} />
         </Routes>
       </div>
     </Router>

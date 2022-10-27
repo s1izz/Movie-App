@@ -44,7 +44,53 @@
     cursor: pointer;
 }
 
-.movies__info {
+.search__results {
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.movies {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* padding: 0 12px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.movie {
+    width: 100%;
+    max-width: 30%;
+    margin: 8px 0;
+    padding: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.22);
+}
+
+.movie__img--container {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.movie__img {
+    width: 100%;
+}
+
+.movie__details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.movie__title {
+    font-weight: 600;
+}
+
+.movie__year {
+
+}
+
+.movie__type {
+    text-transform: capitalize;
 }
