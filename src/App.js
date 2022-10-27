@@ -9,7 +9,7 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/Movie-App" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path={":homeSearchTerm" || "/searchPage"} element={<Find />} />
           <Route path=":id" element={<MovieInfo />} />
         </Routes>
