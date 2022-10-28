@@ -7,7 +7,6 @@ import { useNavigate, useParams } from "react-router-dom";
 
 function Find() {
   const { homeSearchTerm } = useParams();
-  console.log(homeSearchTerm);
   const navigate = useNavigate();
   const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState(null);

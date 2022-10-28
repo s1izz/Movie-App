@@ -1,0 +1,25 @@
+.info__container {
+    width: 100%;
+    padding: 40px;
+    display: flex;
+}
+
+.movieInfo__img--container {
+    width: 100%;
+    max-width: 40%;
+    margin: 0px 48px 0px 0px;
+    overflow: hidden;
+}
+
+
+.movieInfo__img {
+    width: 100%;
+}
+
+.movieInfo__container {
+
+}
+
+.movieInfo__rating {
+    color: gold;
+}
