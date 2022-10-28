@@ -3,19 +3,20 @@ import "./Find.css";
 import Nav from "./Nav";
 import SearchIcon from "@mui/icons-material/Search";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function Find() {
   const { homeSearchTerm } = useParams();
   console.log(homeSearchTerm);
+  const navigate = useNavigate();
   const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState(null);
   const [displayTerm, setDisplayTerm] = useState("");
 
   function onSearch() {
     if (!searchTerm) {
-      console.log('no search term')
-      return
+      console.log("no search term");
+      return;
     }
     getMovies();
     setDisplayTerm(searchTerm);
@@ -23,7 +24,9 @@ function Find() {
 
   async function getMovies() {
     const { data } = await axios.get(
-      `https://www.omdbapi.com/?apikey=2a96fd51&s=${searchTerm || homeSearchTerm}`
+      `https://www.omdbapi.com/?apikey=2a96fd51&s=${
+        searchTerm || homeSearchTerm
+      }`
     );
     setMovies(data.Search);
   }
@@ -32,7 +35,7 @@ function Find() {
     if (homeSearchTerm === "searchPage") {
       return;
     }
-    setDisplayTerm(homeSearchTerm)
+    setDisplayTerm(homeSearchTerm);
     getMovies();
   }, [homeSearchTerm]);
 
@@ -72,7 +75,11 @@ function Find() {
       </div>
       <div className="movies">
         {movies.slice(0, 6).map((movie) => (
-          <div className="movie" key={movie.imdbID}>
+          <div
+            className="movie"
+            onClick={() => navigate(`/searchPage/${movie.imdbID}`)}
+            key={movie.imdbID}
+          >
             <figure className="movie__img--container">
               <img className="movie__img" src={movie.Poster} alt="" />
             </figure>
