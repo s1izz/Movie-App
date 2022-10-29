@@ -95,3 +95,13 @@
 .movie__type {
     text-transform: capitalize;
 }
+
+.movieInfo__points {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+}
+
+.movieInfo__point {
+
+}
