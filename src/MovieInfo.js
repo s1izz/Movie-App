@@ -11,7 +11,6 @@ function MovieInfo() {
   const { id } = useParams();
   const [movieInfo, setMovieInfo] = useState([]);
   const [rating, setRating] = useState(5);
-  const [emptyStars, setEmptyStars] = useState(1)
 
   async function getMovieInfo() {
     const { data } = await axios.get(
@@ -33,21 +32,6 @@ function MovieInfo() {
   useEffect(() => {
     console.log(rating);
   }, [rating]);
-
-    // const fiveStars = [
-    //   <StarBorderIcon />,
-    //   <StarBorderIcon />,
-    //   <StarBorderIcon />,
-    //   <StarBorderIcon />,
-    //   <StarBorderIcon />,
-    // ];
-
-  // function getStars() {
-  //   return (
-      
-  //   );
-  // }
-
   return (
     <div className="movieInfo">
       <Nav
@@ -68,15 +52,21 @@ function MovieInfo() {
             {new Array(Math.floor(rating)).fill(0).map((_, index) => (
               <StarIcon className="star" key={index} />
             ))}
-
-            {rating >= (Math.floor(rating) + 0.5) && <StarHalfIcon className="star" />}
-              
-              {setEmptyStars(document.getElementsByClassName("star").length)}
-
-            {new Array((emptyStars)).fill(0).map((_, index) => (
-              <StarBorderIcon className="star" key={index} />
-            ))}
-
+            {rating >= Math.floor(rating) + 0.5 && (
+              <StarHalfIcon className="star" />
+            )}
+            {rating >= Math.floor(rating) + 0.5 &&
+              new Array(4 - Math.floor(rating))
+                .fill(0)
+                .map((_, index) => (
+                  <StarBorderIcon className="star" key={index} />
+                ))}
+            {!(rating >= Math.floor(rating) + 0.5) &&
+              new Array(5 - Math.floor(rating))
+                .fill(0)
+                .map((_, index) => (
+                  <StarBorderIcon className="star" key={index} />
+                ))}
           </div>
           <div className="movieInfo__points">
             <div className="movieInfo__point">Year: {movieInfo.Year}</div>
@@ -86,10 +76,7 @@ function MovieInfo() {
           </div>
         </div>
       </div>
-      {/* <button onClick={console.log(rating)}>rating</button> */}
-      {/* {console.log(Math.ceil(rating))} */}
-      {console.log(document.getElementsByClassName("star").length)}
-    </div>
+     </div>
   );
 }
 
